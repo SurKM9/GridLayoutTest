@@ -2,7 +2,7 @@
 #include "ui_MainWindow.h"
 #include <QLabel>
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -30,21 +30,23 @@ void MainWindow::on_pushButton_clicked()
         label3->setStyleSheet("border: 3px solid black;");
         label4->setStyleSheet("border: 3px solid black;");
 
-        ui->gridLayout->addWidget(label1, 0,0);
-        ui->gridLayout->addWidget(label2, 0,1);
-        ui->gridLayout->addWidget(label3, 1,0);
-        ui->gridLayout->addWidget(label4, 1,1);
+        ui->gridLayout->addWidget(label1, 0, 0);
+        ui->gridLayout->addWidget(label2, 0, 1);
+        ui->gridLayout->addWidget(label3, 1, 0);
+        ui->gridLayout->addWidget(label4, 1, 1);
     }
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    auto item = ui->gridLayout->itemAt(0);
+    // get the item in the layout at index 0
+    QLayoutItem* item = ui->gridLayout->itemAt(0);
     ui->gridLayout->removeItem(item);
 
     // get the widget
-    auto widget = item->widget();
+    QWidget* widget = item->widget();
 
+    // check if a valid widget
     if(widget)
     {
         delete widget;
