@@ -1,15 +1,13 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include <QLabel>
-#include <QWidgetItem>
-#include <QObject>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    resize(1920, 1080);
+    resize(800, 600);
 }
 
 MainWindow::~MainWindow()
